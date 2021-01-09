@@ -36,7 +36,7 @@ public class Main {
 
         City.sort(li,size);
 
-        System.out.println("se gamaw");
+
         
     }
 }
