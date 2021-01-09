@@ -10,6 +10,8 @@ public class Main {
 
         int size = 0;                                                               // prepei na diabazw ena arithmo k gia na printarw tis poleis
         ListInterface <City> li = new List <>();                                    // kai oxi oles tis poleis
+        PriorityQueueInterface <City> pq = new HeapPriorityQueue<City>(new IntegerComparator());
+
 
         try {
             Scanner sc = new Scanner(new File("file.txt"));
@@ -23,7 +25,9 @@ public class Main {
                 li.insertAtBack(s1);
                 String a1 = s1.toString();
                 //System.out.println(a1);
+                pq.add(s1);
                 size +=1;
+                System.out.println(pq.peek());                          // print mesw tis priority queue gia to megalitero ekeini tin stigmi
             }
             sc.close();
         }catch (InputMismatchException e) {
@@ -34,10 +38,11 @@ public class Main {
         //System.out.println(li.toString());
         //System.out.println(list[0].calculateDensity());
 
-        City.sort(li,size);                             // den exw ftia3ei gia idio density kai idio onoma na ginetai mesw id i heapsort
-                                                        // ta if.
+        //City.sort(li,size);                             // print mesw HeapSort tis listas poy exw ftia3ei
+
+                                                                // den exw ftia3ei gia idio density kai idio onoma na ginetai mesw id i heapsort
+                                                                // ta if.
 
 
-        
     }
 }

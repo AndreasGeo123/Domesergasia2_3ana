@@ -66,7 +66,8 @@ public class City implements CityInterface{
 
     @Override
     public String  toString(){
-        return +id + " " + name + " " + pop + " " + cases;         // prepei na figei apo to interface kai na ftia3w mia stin List moy klasei
+        //return +id + " " + name + " " + pop + " " + cases;         // prepei na figei apo to interface kai na ftia3w mia stin List moy klasei
+        return name;
     }
 
     @Override
