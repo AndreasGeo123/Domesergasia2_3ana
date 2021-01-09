@@ -160,6 +160,6 @@ public class City implements CityInterface{
 
     public static void printaregamwtinmanasoy(City[] list, int size){
 
-        //for (int i=0; i<size; i++) System.out.println(list[i]);
+        for (int i=0; i<size; i++) System.out.println(list[i].getName());
     }
 }

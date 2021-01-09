@@ -8,8 +8,8 @@ public class Main {
     public static void main (String []args)throws FileNotFoundException {
 
 
-        int size = 0;
-        ListInterface <City> li = new List <>();
+        int size = 0;                                                               // prepei na diabazw ena arithmo k gia na printarw tis poleis
+        ListInterface <City> li = new List <>();                                    // kai oxi oles tis poleis
 
         try {
             Scanner sc = new Scanner(new File("file.txt"));
@@ -34,7 +34,8 @@ public class Main {
         //System.out.println(li.toString());
         //System.out.println(list[0].calculateDensity());
 
-        City.sort(li,size);
+        City.sort(li,size);                             // den exw ftia3ei gia idio density kai idio onoma na ginetai mesw id i heapsort
+                                                        // ta if.
 
 
         
