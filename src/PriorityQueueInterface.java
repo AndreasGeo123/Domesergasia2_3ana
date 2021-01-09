@@ -24,4 +24,8 @@ public interface PriorityQueueInterface <T> {
     T getMax();
 
     public boolean isEmpty();
+
+    public int size();
+
+    //City remove(City id);
 }

@@ -1,26 +1,26 @@
 import java.util.Comparator;
 
-public class HeapPriorityQueue <T> implements PriorityQueueInterface <T> {
+public class HeapPriorityQueue <City> implements PriorityQueueInterface <City> {
 
 
 
-    private T[] heap; // the heap to store data in
+    private City[] heap; // the heap to store data in
     private int size; // current size of the queue
-    private Comparator <T> comparator; // the comparator to use between the objects
+    private Comparator <City> comparator; // the comparator to use between the objects
 
     private static final int DEFAULT_CAPACITY = 4; // default capacity
     private static final int AUTOGROW_SIZE = 4; // default auto grow
 
 
-    public HeapPriorityQueue(Comparator<T> comparator) {
-        this.heap = (T[]) new Object[DEFAULT_CAPACITY + 1];
+    public HeapPriorityQueue(Comparator<City> comparator) {
+        this.heap = (City[]) new Object[DEFAULT_CAPACITY + 1];
         this.size = 0;
         this.comparator = comparator;
     }
 
 
     @Override
-    public void add(T item) {
+    public void add(City item) {
         // Check available space
         if (size == heap.length - 1)
             grow();
@@ -34,12 +34,28 @@ public class HeapPriorityQueue <T> implements PriorityQueueInterface <T> {
 
     @Override
     public boolean isEmpty(){
+
         return heap[1] == null;
     }
 
+    @Override
+    public int size() {
+
+        return size;
+    }
+
+    /*@Override
+    public City remove(City id){
+        City temp =heap[0];
+        for (int i =0; i <=size; i++){
+
+        }
+        return null;
+    }*/
+
 
     @Override
-    public T peek() {
+    public City peek() {
         // Ensure not empty
         if (size == 0)
             return null;
@@ -50,13 +66,13 @@ public class HeapPriorityQueue <T> implements PriorityQueueInterface <T> {
 
 
     @Override
-    public T getMax() {
+    public City getMax() {
         // Ensure not empty
         if (size == 0)
             return null;
 
         // Keep a reference to the root item
-        T root = heap[1];
+        City root = heap[1];
 
         // Replace root item with the one at rightmost leaf
         heap[1] = heap[size];
@@ -127,7 +143,7 @@ public class HeapPriorityQueue <T> implements PriorityQueueInterface <T> {
 
 
     private void swap(int i, int j) {
-        T tmp = heap[i];
+        City tmp = heap[i];
         heap[i] = heap[j];
         heap[j] = tmp;
     }
@@ -136,7 +152,7 @@ public class HeapPriorityQueue <T> implements PriorityQueueInterface <T> {
      * Helper function to grow the size of the heap
      */
     private void grow() {
-        T[] newHeap = (T[]) new Object[heap.length + AUTOGROW_SIZE];
+        City[] newHeap = (City[]) new Object[heap.length + AUTOGROW_SIZE];
 
         // copy array
         System.arraycopy(heap, 1, newHeap, 1, size);

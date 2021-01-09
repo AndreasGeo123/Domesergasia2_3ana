@@ -1,7 +1,7 @@
- public class List<T> implements ListInterface<T> {
+ public class List<City> implements ListInterface<City> {
 
-        private Node <T> head = null;
-        private Node <T> tail = null;
+        private Node <City> head = null;
+        private Node <City> tail = null;
 
         /**
          * Default constructor
@@ -26,9 +26,9 @@
          * @param data the inserted data
          */
         @Override
-        public void insertAtFront(T data) {
+        public void insertAtFront(City data) {
 
-            Node <T> n = new Node<>(data);
+            Node <City> n = new Node<>(data);
 
             if (isEmpty()) {
                 head = n;
@@ -45,9 +45,9 @@
          * @param data the inserted item
          */
         @Override
-        public void insertAtBack(T data) {
+        public void insertAtBack(City data) {
 
-            Node <T> n = new Node<>(data);
+            Node <City> n = new Node<>(data);
 
             if (isEmpty()) {
                 head = n;
@@ -64,12 +64,12 @@
 
 
         @Override
-        public T removeFromFront()  {
+        public City removeFromFront()  {
 
             //if (isEmpty())
             //throw new EmptyListException();
 
-            T data = head.getData();
+            City data = head.getData();
 
             if (head == tail)
                 head = tail = null;
@@ -81,17 +81,17 @@
 
 
         @Override
-        public T removeFromBack()  {
+        public City removeFromBack()  {
 
             //if (isEmpty())
             //throw new EmptyListException();
 
-            T data = tail.getData();
+            City data = tail.getData();
 
             if (head == tail)
                 head = tail = null;
             else {
-                Node <T> iterator = head;
+                Node <City> iterator = head;
                 while (iterator.getNext() != tail)
                     iterator = iterator.getNext();
 
@@ -104,7 +104,7 @@
 
 
         @Override
-        public T  getFirst(){
+        public City  getFirst(){
 
             return head.data;
         }
@@ -138,14 +138,14 @@
         }
 
         @Override
-        public T getNext(){
+        public City getNext(){
             head = head.getNext();
             return head.data;
         }
 
 
         @Override
-        public T getPrev(){
+        public City getPrev(){
             head = head.getPrev();
             return head.data;
         }
