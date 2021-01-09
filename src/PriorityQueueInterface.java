@@ -22,4 +22,6 @@ public interface PriorityQueueInterface <T> {
      * @return the head of the queue
      */
     T getMax();
+
+    public boolean isEmpty();
 }

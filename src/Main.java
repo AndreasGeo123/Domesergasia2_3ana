@@ -12,6 +12,9 @@ public class Main {
         ListInterface <City> li = new List <>();                                    // kai oxi oles tis poleis
         PriorityQueueInterface <City> pq = new HeapPriorityQueue<City>(new IntegerComparator());
 
+        if(pq.isEmpty()){
+            System.out.println("The Queue is Empty");
+        }
 
         try {
             Scanner sc = new Scanner(new File("file.txt"));
@@ -43,6 +46,9 @@ public class Main {
                                                                 // den exw ftia3ei gia idio density kai idio onoma na ginetai mesw id i heapsort
                                                                 // ta if.
 
+        if(pq.isEmpty()){
+            System.out.println("The Queue is Empty");
+        }
 
     }
 }
